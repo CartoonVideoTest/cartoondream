@@ -1,5 +1,5 @@
-from Page import basestruct as bs,result_show as rs
-from SearchResult import get_search_result as gsr
+from .Page import basestruct as bs,result_show as rs
+from .SearchResult import get_search_result as gsr
 import streamlit as st
 
 
