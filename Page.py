@@ -1,6 +1,6 @@
 import streamlit as st
-from .SearchResult import skip_get_url as sgu
-from .SearchResult import get_video_url as gvu
+from SearchResult import skip_get_url as sgu
+from SearchResult import get_video_url as gvu
 
 def basestruct():
     st.title("动漫梦工厂")
