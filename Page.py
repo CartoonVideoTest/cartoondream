@@ -26,7 +26,7 @@ def result_show(detail):
             if st.button("集数获取",key=f'button{i}'):
                 if not see_num.isdigit():
                     st.write(f"你TM了个巴子的，集数是数字！整数！！你TM了个巴子的输入{see_num}\n\n小心额锤你")
-                elif see_num <=0 :
+                elif int(see_num) <=0 :
                         st.write("集数当然是从“1”开始啦！！！")
                 else:
                     num=sgu(str(detail[i]))[0]
