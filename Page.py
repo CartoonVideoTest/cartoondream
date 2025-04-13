@@ -25,7 +25,9 @@ def result_show(detail):
             see_num = st.text_input('输入观看集数（输入0是最后一集）：', key=f'input{i}')
 
             if st.button("集数获取", key=f'button{i}'):
-                if (not see_num.isdigit()) & (see_num is None):
+                num = sgu(str(detail[i]))[0]
+                st.write(f"共{num}集")
+                if (not see_num.isdigit()):
                     try:
                         if int(see_num) <= 0:
                             st.write("集数当然是从“1”开始啦！！！")
@@ -34,8 +36,7 @@ def result_show(detail):
 
                 else:
                     if see_num == '':
-                        num = sgu(str(detail[i]))[0]
-                        st.write(f"共{num}集")
+                        pass
                     else:
                         if int(see_num) > int(num):
                             st.write(f"你TM了个巴子的，一共才{num}集，你却要看{see_num}集\n\n小心额锤你")
