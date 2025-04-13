@@ -25,7 +25,7 @@ def result_show(detail):
             see_num = st.text_input('输入观看集数（输入0是最后一集）：', key=f'input{i}')
 
             if st.button("集数获取", key=f'button{i}'):
-                if (not see_num.isdigit()) & (see_num != ''):
+                if (not see_num.isdigit()) & (see_num is None):
                     try:
                         if int(see_num) <= 0:
                             st.write("集数当然是从“1”开始啦！！！")
