@@ -22,14 +22,17 @@ def result_show(detail):
         with col2:
             st.write(detail[i+1])
             see_num = st.text_input('输入观看集数：',key=f'input{i}')
-            if st.button("集数获取",key=f'button{i}'):
-                num=sgu(str(detail[i]))[0]
-                st.write(f"共{num}集")
-                if see_num != '':
-                    if int(see_num) > int(num):
-                        st.write(f"你TM了个巴子的，一共才{num}集，你却要看{see_num}集\n\n小心额锤你")
-                    else:
-                        st.write(gvu(sgu(str(detail[i]))[1][int(see_num)-1]))
+            if is_number(see_num):
+                if st.button("集数获取",key=f'button{i}'):
+                    num=sgu(str(detail[i]))[0]
+                    st.write(f"共{num}集")
+                    if see_num != '':
+                        if int(see_num) > int(num):
+                            st.write(f"你TM了个巴子的，一共才{num}集，你却要看{see_num}集\n\n小心额锤你")
+                        else:
+                            st.write(gvu(sgu(str(detail[i]))[1][int(see_num)-1]))
+            else:
+                st.write(f"你TM了个巴子的，集数是数字，你TM了个巴子的输入{see_num}\n\n小心额锤你")
 
         st.write("---")
 
