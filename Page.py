@@ -24,7 +24,7 @@ def result_show(detail):
             see_num = st.text_input('输入观看集数：',key=f'input{i}')
             
             if st.button("集数获取",key=f'button{i}'):
-                if not is_number(see_num):
+                if not see_num.isdigit():
                     st.write(f"你TM了个巴子的，集数是数字，你TM了个巴子的输入{see_num}\n\n小心额锤你")
                 else:
                     num=sgu(str(detail[i]))[0]
