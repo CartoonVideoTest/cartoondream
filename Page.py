@@ -23,9 +23,9 @@ def result_show(detail):
             st.write(detail[i+1])
             see_num = st.text_input('输入观看集数（输入0是最后一集）：',key=f'input{i}')
             num=sgu(str(detail[i]))[0]
+            st.write(f"共{num}集")
             
             if st.button("集数获取",key=f'button{i}'):
-                st.write(f"共{num}集")
                 if not see_num.isdigit():
                     try:
                         if int(see_num) <=0 :
