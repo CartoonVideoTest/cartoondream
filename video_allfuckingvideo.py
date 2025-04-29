@@ -2,9 +2,6 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
-from selenium import webdriver
-from selenium.webdriver.edge.options import Options
-from selenium.webdriver.common.by import By
 
 header='https://www.tv121.com/'
 header1='https://www.tv121.com/static/js/player.html?url='
@@ -69,32 +66,6 @@ if st.session_state.seach:
                 """
 
                 st.markdown(iframe_html, unsafe_allow_html=True)
-
-                # st.write("获取中，请等待……")
-                # try:
-                #     edge_options = Options()
-                #     edge_options.add_argument('--headless')
-                #     edge_options.add_argument('--start-maximized')
-                #     driver = webdriver.Edge(options=edge_options)
-                #     driver.implicitly_wait(10)
-                #     driver.get(input_url)
-                #     play_url = driver.find_element(by=By.CSS_SELECTOR, value="td#playleft>iframe").get_attribute('src').split('&')[0]
-                #     # driver.switch_to.frame(get_iframe)
-                #
-                #     # play_url = driver.find_element(by=By.CSS_SELECTOR, value='video#lelevideo').get_attribute('src')
-                #
-                #     iframe_html =f"""
-                #     <iframe src="{play_url}" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                #     """
-                #
-                #     st.markdown(iframe_html, unsafe_allow_html=True)
-                #
-                #     driver.quit()
-                # except Exception as e:
-                #     st.write(e)
-
-
-
 
 
         st.write('---')
